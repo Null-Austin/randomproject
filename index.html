@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>random game.</title>
+    <title>random project.</title>
     <style>
         iframe {
             width: 100%;
@@ -13,17 +13,27 @@
     </style>
 </head>
 <body>
-    <button>click for random game</button>
+    <button>click for random project</button>
     <iframe src="" frameborder="0"></iframe>
     <script>
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
         const iframe = document.querySelector('iframe');
         const button = document.querySelector('button');
         
         const basehtmlcode = '<head><style>body{background-color: lightgray;color:black;}</style></head><body></body>';
 
         function randomhtml(){
+            htmlcodes = [ //you just have to edit the html code in this to change it!
+                '<h1>project 1</h1><img src=0 onerror=\'alert(1)\'>',
+                '<h1>project 2</h1><img src=0 onerror=\'alert(2)\'>'
+            ]
+            const randomnumber = getRandomInt(htmlcodes.length)
             return(
-                '<h1>lol</h1><p>this is a cool script</p>'
+                htmlcodes[randomnumber]
             )
         }
 
